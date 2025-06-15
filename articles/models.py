@@ -14,3 +14,4 @@ class Article(UUIDModel, SoftDeletableModel, TimeStampedModel):
     is_published = models.BooleanField(default=True)
     comments = GenericRelation(Comment, related_query_name='article')
     likes = GenericRelation(Like, related_query_name='article')
+    views = models.IntegerField(default=0)
